@@ -1,4 +1,4 @@
-package com.weatherforecast.testControler;
+package com.weatherforecast.testcases;
 
 import static org.junit.Assert.assertTrue;
 
@@ -92,6 +92,8 @@ public class StepDefinitions {
 		return pr;
 	}
 	
+	
+	//Asserting the summarize weather report
 	@Then("^\"([^\"]*)\" should be \"([^\"]*)\"$")
 	public void should_be(String arg1, String arg2) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
@@ -124,19 +126,10 @@ public class StepDefinitions {
 	    
 	}
 	
-	
-	@Then("^I validate the details for first day$")
-	public void i_validate_the_details_for_first_day() throws Throwable {
-		cityN = new WeatherForecastByCity(driver);
-		String text1= driver.findElement(By.xpath("//*[@id=\'root\']/div/h1")).getText();
-		String text2= driver.findElement(By.xpath("//*[@id=\'city\']")).getText();
-		text1=text1+text2;
-	Assert.assertEquals("Five Day Weather Forecast for Glasgow", text1);
-		
-	}
+
 	
 
-
+//Entering the city name
 	@When("^I enter the city name as \"([^\"]*)\"$")
 	public void i_enter_the_city_name_as(String arg1) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
@@ -148,6 +141,8 @@ public class StepDefinitions {
 		cityN.clickAfterCity();
 	}
 	
+	
+	//Closing the application
 	
 	@Then("^I close the application$")
 	public void i_close_the_application() throws Throwable {
